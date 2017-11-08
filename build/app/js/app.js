@@ -36,6 +36,20 @@
 			}
 	});
 })();
+
+
+(function(){
+	//создаем JQuery функцию, которая будет подгружать изображения в буфер
+	jQuery.preloadImages = function()
+		{
+			for(var i = 0; i < arguments.length; i++)
+		{
+			jQuery("<img>").attr("src", arguments[ i ]);
+		}
+	};
+	//указываем путь к изображению, которое нужно подгрузить
+	$.preloadImages("../img/general/main-bg__2.jpg");
+})();
 $(document).ready(function () {
     svg4everybody({});
 });
