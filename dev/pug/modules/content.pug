@@ -1,0 +1,18 @@
+.about
+	.container
+		.about__wrap
+			.about__list
+				each object in content.about.list
+					.about__item
+						h2.about__title= object["title"]
+						.about__descr
+							p.about__text= object["text"]
+							p.about__text= object["text2"]
+			.about__info
+				.about__contacts
+					a.about__link(href="tel:"+ content.about.phone)= content.about.phone
+					a.about__link.about__link--mail(href="mailto:"+ content.about.mail)= content.about.mail
+				.about__address
+					span.about__part= content.about.city
+					span.about__part= content.about.street
+					span.about__part= content.about.home

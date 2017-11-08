@@ -1,0 +1,5 @@
+footer.footer
+	.container
+		ul.footer__list
+			each footer in content.footer
+				li.footer__item(data-color= footer["color"])= footer["text"]

@@ -1,0 +1,28 @@
+.menu__list
+	display flex
+
+.menu__item
+	&:first-child
+		margin-right 40px
+
+.menu__link
+	color white
+	font-size rem(20px)
+	text-transform uppercase
+	font-weight 900
+	padding 10px 20px
+	z-index 1
+	position relative
+	&:before
+		content ""
+		display block
+		size(0%, 15px)
+		background greenColor
+		position absolute
+		top: 17px;
+		left: 10px;
+		z-index: -1;
+		trs()
+	&:hover
+		&:before
+			width 70%

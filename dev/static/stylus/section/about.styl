@@ -1,0 +1,90 @@
+.about
+	color white
+
+.about__wrap
+	display flex
+	padding-left rem(40px)
+	justify-content space-between
+
+.about__list
+	position relative
+	width 35%
+	transform translateY(-50px)
+	align-self center 
+
+.about__item
+	position absolute
+	top 0
+	left 0
+	opacity 0
+	trs()
+	transition-duration .5s
+
+.about__item--active
+	opacity 1
+
+.about__title
+	height 70px
+	text-transform uppercase
+	font-size rem(20px)
+	font-weight 900
+	width 20%
+	line-height rem(30px)
+
+.about__descr
+	color black
+	background rgba(white, .8)
+	box-shadow 0px 0px 10% 60px rgba(#1a0205, .2)
+	padding 20px 15px
+
+.about__text
+	margin-bottom rem(45px)
+	line-height rem(30px)
+	text-transform uppercase
+	&:last-child
+		margin-bottom 0
+
+
+.about__info
+	width 40%
+
+.about__contacts
+	margin-bottom rem(100px) 
+
+.about__link
+	font-size rem(28px)
+	font-weight 900
+	display block
+	color white
+	trs()
+	&:hover
+		color greenColor
+
+.about__link--mail
+	padding-left 10px
+	margin-top 10px
+
+
+.about__part
+	display block
+	text-transform uppercase
+	font-size rem(20px)
+	position relative
+	width fit-content
+	padding 7px 10px
+	z-index 1
+	&:before
+		content ""
+		width 0%
+		height 100%
+		position absolute
+		top 0
+		left 0
+		background greenColor
+		z-index -1
+		transition all .5s linear
+
+
+.about__part--animate
+	&:before
+		width 100%

@@ -1,0 +1,19 @@
+.footer
+	color white
+
+.footer__list
+	display flex
+	transform rotate(-90deg)
+	width: fit-content
+	transform-origin left
+
+.footer__item
+	text-transform uppercase
+	cursor pointer
+	padding-bottom 4px
+	border-bottom 4px solid transparent
+	&:first-child
+		margin-right rem(60px)
+
+.footer__item--active
+	border-bottom 4px solid greenColor
