@@ -1,6 +1,7 @@
 header.header
 	.container
 		.header__row
-			h1.header__logo= content.header.title
+			a.header__link(href="/")
+				h1.header__logo= content.header.title
 			.header__menu
 				include menu

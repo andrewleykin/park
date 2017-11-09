@@ -2,7 +2,7 @@
   "navPages": [
   	{
   		"text": "Объекты",
-  		"link": "#"
+  		"link": "object.html"
   	},
   	{
   		"text": "Партнёры",

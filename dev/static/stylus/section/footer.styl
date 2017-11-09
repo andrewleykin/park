@@ -1,17 +1,22 @@
 .footer
 	color white
+	@media(max-width: 1300px)
+		padding-left 10px
 
 .footer__list
 	display flex
 	transform rotate(-90deg)
 	width: fit-content
 	transform-origin left
+	@media(max-width: 480px)
+		transform rotate(-90deg) translateX(-100px)
 
 .footer__item
 	text-transform uppercase
-	cursor pointer
+	cursor default
 	padding-bottom 4px
 	border-bottom 4px solid transparent
+	font-size 14px 
 	&:first-child
 		margin-right rem(60px)
 

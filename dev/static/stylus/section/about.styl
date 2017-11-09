@@ -1,20 +1,32 @@
 .about
 	color white
+	height 100%
+	display flex
+	align-items flex-end
 
 .about__wrap
 	display flex
 	padding-left rem(40px)
 	justify-content space-between
+	@media(max-width: 1300px)
+		padding-left rem(45px)
+	@media(max-width: 480px)
+		flex-direction column
 
 .about__list
 	position relative
 	width 35%
-	transform translateY(-50px)
-	align-self center 
+	align-self center
+	height: 240px;
+	@media(max-width: 960px)
+		width 55% 
+	@media(max-width: 480px)
+		width 100%
+		margin-bottom 20px
 
 .about__item
 	position absolute
-	top 0
+	bottom 0
 	left 0
 	opacity 0
 	trs()
@@ -30,6 +42,12 @@
 	font-weight 900
 	width 20%
 	line-height rem(30px)
+	@media(max-width: 700px)
+		height 50px
+	@media(max-width: 480px)
+		height 40px
+		width 100%
+		text-align center
 
 .about__descr
 	color black
@@ -47,9 +65,14 @@
 
 .about__info
 	width 40%
+	@media(max-width: 480px)
+		width 100%
+		text-align center
 
 .about__contacts
-	margin-bottom rem(100px) 
+	margin-bottom rem(100px)
+	@media(max-width: 480px)
+		margin-bottom rem(60px) 
 
 .about__link
 	font-size rem(28px)
@@ -83,6 +106,8 @@
 		background greenColor
 		z-index -1
 		transition all .5s linear
+	@media(max-width: 480px)
+		margin 0 auto
 
 
 .about__part--animate
