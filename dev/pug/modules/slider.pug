@@ -13,7 +13,7 @@
 								span.object__name= object["name"] 
 								p.object__text= object["text"] 
 								a.object__link(href= object["link"]  target="_blank" title="Посмотреть на карте")
-								button.object__btn(type="button")= content.slider.btn.order
+								button.object__btn(type="button" data-remodal-target="order")= content.slider.btn.order
 			button.object__arrow(type="button")
 				img(src="app/img/general/arrow.png", alt="NEXT")
 			.object__dots

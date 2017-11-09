@@ -241,3 +241,76 @@
 		reqDot.addClass(activeDot).siblings().removeClass(activeDot);
 	}
 })();
+
+// валидация формы
+
+(function(){
+
+	$("#phone").mask("+7 (999) 999-99-99");
+
+	var order = $('.order'),
+		form = order.find('.order__form'),
+		right = order.find('.order__right'),
+		input = form.find('.order__input--required'),
+		btn = order.find('.order__btn');
+
+		// функция валидация формы
+		var validFunc = function () {
+
+			// проверяем каждый input
+			input.each(function(i) {
+
+				// проверяем условие, есть ли в поле что-нидь
+				if($(this).val() != '') {
+					right.addClass('order__right--active');
+				} else {
+					right.removeClass('order__right--active');
+				}
+
+			}); // --> заканчиваем проверять инпуты
+
+
+			return valid;
+		} // --> validFunc is end
+
+
+		// проверяем каждый инпут
+		input.each(function(i) {
+
+			// для каждого инпута при покидании поля
+			$(this).blur(function() {
+
+				// проверяем наличие чего-либо
+				if($(this).val() != '') {
+					$(this).removeClass('order__input--required');
+					$(this).siblings('.order__label').addClass('order__label--hide');
+					if(!input.hasClass('order__input--required')) {
+						right.addClass('order__right--active')
+					}
+				} else {
+					$(this).siblings('.order__label').removeClass('order__label--hide')
+					$(this).addClass('order__input--required');
+					if(input.hasClass('order__input--required')) {
+						right.removeClass('order__right--active')
+					}
+				}
+			});
+
+		});
+
+
+		// при клике на кнопку отправки
+		btn.click(function(e) {
+			e.preventDefault();
+			validFunc();
+
+			// проверять условие есть ли класс
+			if(!(right.hasClass('order__right--active'))) {
+				return false;
+			} else {
+				form.submit();
+			}
+
+		});
+
+})();

@@ -38,31 +38,31 @@
                   <div class="object__item" data-color="blue">
                     <div class="object__inner"><span class="object__name">Фасадные работы на дмитровке</span>
                       <p class="object__text">Устройство системы навесных вентилируемых фасадов с воздушным зазором с использованием фиброцементных плит. Монтаж мокрых фасадов по балконам.</p><a class="object__link" href="https://yandex.ru/maps/-/CBaqbBB1KC" target="_blank" title="Посмотреть на карте"></a>
-                      <button class="object__btn" type="button">Заказать КП</button>
+                      <button class="object__btn" type="button" data-remodal-target="order">Заказать КП</button>
                     </div>
                   </div>
                   <div class="object__item" data-color="blue">
                     <div class="object__inner"><span class="object__name">Фасадные работы на дмитровке 2</span>
                       <p class="object__text">Устройство системы навесных вентилируемых фасадов с воздушным зазором с использованием фиброцементных плит. Монтаж мокрых фасадов по балконам.</p><a class="object__link" href="https://yandex.ru/maps/-/CBaqbBB1KC" target="_blank" title="Посмотреть на карте"></a>
-                      <button class="object__btn" type="button">Заказать КП</button>
+                      <button class="object__btn" type="button" data-remodal-target="order">Заказать КП</button>
                     </div>
                   </div>
                   <div class="object__item" data-color="green">
                     <div class="object__inner"><span class="object__name">Фасадные работы на дмитровке 3</span>
                       <p class="object__text">Устройство системы навесных вентилируемых фасадов с воздушным зазором с использованием фиброцементных плит. Монтаж мокрых фасадов по балконам.</p><a class="object__link" href="https://yandex.ru/maps/-/CBaqbBB1KC" target="_blank" title="Посмотреть на карте"></a>
-                      <button class="object__btn" type="button">Заказать КП</button>
+                      <button class="object__btn" type="button" data-remodal-target="order">Заказать КП</button>
                     </div>
                   </div>
                   <div class="object__item" data-color="green">
                     <div class="object__inner"><span class="object__name">Фасадные работы на дмитровке 4</span>
                       <p class="object__text">Устройство системы навесных вентилируемых фасадов с воздушным зазором с использованием фиброцементных плит. Монтаж мокрых фасадов по балконам.</p><a class="object__link" href="https://yandex.ru/maps/-/CBaqbBB1KC" target="_blank" title="Посмотреть на карте"></a>
-                      <button class="object__btn" type="button">Заказать КП</button>
+                      <button class="object__btn" type="button" data-remodal-target="order">Заказать КП</button>
                     </div>
                   </div>
                   <div class="object__item" data-color="blue">
                     <div class="object__inner"><span class="object__name">Фасадные работы на дмитровке 5</span>
                       <p class="object__text">Устройство системы навесных вентилируемых фасадов с воздушным зазором с использованием фиброцементных плит. Монтаж мокрых фасадов по балконам.</p><a class="object__link" href="https://yandex.ru/maps/-/CBaqbBB1KC" target="_blank" title="Посмотреть на карте"></a>
-                      <button class="object__btn" type="button">Заказать КП</button>
+                      <button class="object__btn" type="button" data-remodal-target="order">Заказать КП</button>
                     </div>
                   </div>
                 </div>
@@ -81,6 +81,38 @@
             </ul>
           </div>
         </footer>
+        <div class="order">
+          <div class="remodal order__block" data-remodal-id="order">
+            <button class="remodal-close order__close" data-remodal-action="close"></button>
+            <div class="order__wrap">
+              <div class="order__left">
+                <h3 class="order__title">Заказать коммерческое предложение</h3>
+                <form class="order__form">
+                  <div class="order__block">
+                    <input class="order__input order__input--name" type="text" name="name" id="name">
+                    <label class="order__label" for="name">имя или название организации</label>
+                  </div>
+                  <div class="order__block">
+                    <input class="order__input order__input--required order__input--phone" type="text" name="phone" id="phone" required>
+                    <label class="order__label" for="phone">телефон</label>
+                  </div>
+                  <div class="order__block">
+                    <input class="order__input order__input--required order__input--email" type="email" name="email" id="email" required>
+                    <label class="order__label" for="email">e-mail</label>
+                  </div>
+                  <div class="order__block">
+                    <input class="order__input order__input--message" type="text" name="message" id="message">
+                    <label class="order__label" for="message">описание необходимых работ</label>
+                  </div>
+                </form>
+              </div>
+              <div class="order__right">
+                <p class="order__text">Нажимая кнопку отправить, вы даете согласие на обработку персональных данных</p>
+                <button class="order__btn" type="submit">Отправить</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <script src="app/js/libs.min.js"></script>
       <script src="app/js/app.js"></script>

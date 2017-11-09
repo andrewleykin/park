@@ -89,5 +89,44 @@
     "btn": {
       "order": "Заказать КП"
     }
+  },
+  "order": {
+    "title": "Заказать коммерческое предложение",
+    "text": "Нажимая кнопку отправить, вы даете согласие на обработку персональных данных",
+    "btn": "Отправить",
+    "form": [
+      {
+        "type": "text",
+        "name": "name",
+        "id": "name",
+        "label": "имя или название организации",
+        "required": "false",
+        "class": "order__input--name"
+      },
+      {
+        "type": "text",
+        "name": "phone",
+        "id": "phone",
+        "label": "телефон",
+        "required": "true",
+        "class": "order__input--phone"
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "id": "email",
+        "label": "e-mail",
+        "required": "true",
+        "class": "order__input--email"
+      },
+      {
+        "type": "text",
+        "name": "message",
+        "id": "message",
+        "label": "описание необходимых работ",
+        "required": "false",
+        "class": "order__input--message"
+      }
+    ]
   }
 }

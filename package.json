@@ -41,6 +41,7 @@
     "font-awesome": "^4.7.0",
     "gulp-concat-css": "^2.3.0",
     "jquery": "^3.2.1",
+    "jquery-inputmask": "^1.0.1",
     "normalize.css": "^7.0.0",
     "parallax-js": "^3.1.0",
     "remodal": "^1.1.1",
