@@ -105,14 +105,14 @@
 	color white
 	font-size 20px
 	font-weight 900
-	background blueColor
+	background greenColor
 	padding 10px 20px
 	cursor pointer
 	display block 
 	margin 0 auto
 	trs()
 	&:hover
-		background darken(blueColor, 20%)
+		background darken(greenColor, 20%)
 
 
 .object__arrow
@@ -126,6 +126,12 @@
 	&:hover
 		transform translate(-50%, 10px)
 
+.object__arrow--disabled
+	opacity 0.5
+	cursor default
+	&:hover
+		transform translateX(-50%)
+
 
 .object__dots
 	position absolute
@@ -136,7 +142,7 @@
 .object__dot
 	display block
 	size(16px)
-	background blueColor 
+	background greenColor 
 	margin-bottom rem(65px)
 	position relative
 	cursor pointer
@@ -149,7 +155,7 @@
 		background white 
 		opacity 0
 	&:hover
-		background darken(blueColor, 20%)
+		background darken(greenColor, 20%)
 
 .object__dot--active
 	&:before

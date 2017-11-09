@@ -61,7 +61,7 @@
 		}
 	};
 	//указываем путь к изображению, которое нужно подгрузить
-	$.preloadImages("/app/img/general/main-bg__2.jpg");
+	$.preloadImages("./app/img/general/main-bg__2.jpg", "./app/img/general/main-bg.jpg");
 })();
 
 // параллакс
@@ -78,6 +78,7 @@
 // слайдер
 
 (function(){
+	// переменные
 	var object = $('.object'),
 		photo = object.find('.object__photo'),
 		item = object.find('.object__item'),
@@ -88,12 +89,15 @@
 		photoParent = object.find('.object__content--pic'),
 		itemParent = object.find('.object__content'),
 		arrow = $('.object__arrow'),
-		direction;
+		disabledArrow = 'object__arrow--disabled'
+		flag = true;
 
+	// при заходе первый активный
 	photo.first().addClass(activePhoto);
 	item.first().addClass(activeItem);
 	dot.first().addClass(activeDot);
 
+	// при нажатии на стрелку
 	arrow.click(function() {
 		var itemActive = item.filter('.' + activeItem),
 			index = itemActive.index();
@@ -105,6 +109,7 @@
 		changeSlide(index);
 	});
 
+	// при нажатии на точки
 	dot.click(function() {
 		var dotActive = dot.filter('.' + activeDot),
 			index = $(this).index();
@@ -112,6 +117,7 @@
 		changeSlide(index);
 	});
 
+	// при нажатии на клавиатуру
 	$(document).on('keydown', (e) => {
 		var itemActive = item.filter('.' + activeItem),
 			index = itemActive.index();
@@ -130,12 +136,102 @@
 		}
 		changeSlide(index);
 	});
+
+	// при движения колесика мыши
+	$('body').on('mousewheel', function(event) {
+
+		var itemActive = item.filter('.' + activeItem),
+			index = itemActive.index();
+
+		if(event.deltaY > 0) {
+			if(index == 0) {
+				index = 0
+			} else {
+				index--;
+			}
+		} else {
+			if(index == item.length-1) {
+				index = item.length - 1;
+			} else {
+				index++;
+			}
+		}
+		if(flag) {
+			changeSlide(index);
+			flag = false;
+		} else {
+			setTimeout(function(){
+				flag = true;
+			},300);
+		}
+	});
+
+	// при свайпе
+	object.swipe({
+		swipeUp:function(event) {
+			var itemActive = item.filter('.' + activeItem),
+				index = itemActive.index();
+			if(index == 0) {
+				index = 0
+			} else {
+				index--;
+				changeSlide(index);
+			}
+		},
+		swipeDown:function(event) {
+			var itemActive = item.filter('.' + activeItem),
+				index = itemActive.index();
+			if(index == item.length-1) {
+				index = item.length - 1;
+			} else {
+				index++;
+				changeSlide(index);
+			}
+		},
+		swipeRight:function(event) {
+			var itemActive = item.filter('.' + activeItem),
+				index = itemActive.index();
+			if(index == 0) {
+				index = 0
+			} else {
+				index--;
+				changeSlide(index);
+			}
+		},
+		swipeLeft:function(event) {
+			var itemActive = item.filter('.' + activeItem),
+				index = itemActive.index();
+			if(index == item.length-1) {
+				index = item.length - 1;
+			} else {
+				index++;
+				changeSlide(index);
+			}
+		}
+	});
+
+	// функция для смена слайда
 	var changeSlide = function(index) {
 		var reqItem = item.eq(index),
 			reqPhoto = photo.eq(index),
 			reqDot = dot.eq(index),
 			perc = index * -100,
-			percPhoto = perc/photo.length;
+			percPhoto = perc/photo.length,
+			color = reqItem.data('color')
+
+		if(index == item.length-1) {
+			arrow.addClass(disabledArrow);
+		} else {
+			arrow.removeClass(disabledArrow)
+		}
+
+		if(color == 'green') {
+			reqItem.closest('.wrapper').removeClass('wrapper--blue').addClass('wrapper--green');
+			$('.footer__item').first().addClass('footer__item--active').siblings().removeClass('footer__item--active');
+		} else {
+			reqItem.closest('.wrapper').removeClass('wrapper--green').addClass('wrapper--blue');
+			$('.footer__item').last().addClass('footer__item--active').siblings().removeClass('footer__item--active');
+		}
 
 
 		itemParent.css('transform', 'translateX('+perc+'%)');
