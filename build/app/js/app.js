@@ -67,8 +67,83 @@
 // параллакс
 
 (function(){
-	var scene = $('#scene').get(0);
-	var parallaxInstance = new Parallax(scene);
+	var scene = $('#scene');
+
+	if (scene.length) {
+		var scene = $('#scene').get(0);
+		var parallaxInstance = new Parallax(scene);
+	}
+})();
+
+// слайдер
+
+(function(){
+	var object = $('.object'),
+		photo = object.find('.object__photo'),
+		item = object.find('.object__item'),
+		dot = object.find('.object__dot'),
+		activePhoto = 'object__photo--active',
+		activeItem = 'object__item--active',
+		activeDot = 'object__dot--active',
+		photoParent = object.find('.object__content--pic'),
+		itemParent = object.find('.object__content'),
+		arrow = $('.object__arrow'),
+		direction;
+
+	photo.first().addClass(activePhoto);
+	item.first().addClass(activeItem);
+	dot.first().addClass(activeDot);
+
+	arrow.click(function() {
+		var itemActive = item.filter('.' + activeItem),
+			index = itemActive.index();
+
+		index++;
+		if(index == item.length) {
+			index = item.length - 1;
+		}
+		changeSlide(index);
+	});
+
+	dot.click(function() {
+		var dotActive = dot.filter('.' + activeDot),
+			index = $(this).index();
+
+		changeSlide(index);
+	});
+
+	$(document).on('keydown', (e) => {
+		var itemActive = item.filter('.' + activeItem),
+			index = itemActive.index();
+		if(e.keyCode == 38) {
+			if(index == 0) {
+				index = 0
+			} else {
+				index--;
+			}
+		} else if (e.keyCode == 40){
+			if(index == item.length-1) {
+				index = item.length - 1;
+			} else {
+				index++;
+			}
+		}
+		changeSlide(index);
+	});
+	var changeSlide = function(index) {
+		var reqItem = item.eq(index),
+			reqPhoto = photo.eq(index),
+			reqDot = dot.eq(index),
+			perc = index * -100,
+			percPhoto = perc/photo.length;
+
+
+		itemParent.css('transform', 'translateX('+perc+'%)');
+		photoParent.css('transform', 'translateY('+percPhoto+'%)');
+		reqItem.addClass(activeItem).siblings().removeClass(activeItem);
+		reqPhoto.addClass(activePhoto).siblings().removeClass(activePhoto);
+		reqDot.addClass(activeDot).siblings().removeClass(activeDot);
+	}
 })();
 $(document).ready(function () {
     svg4everybody({});

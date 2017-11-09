@@ -11,12 +11,20 @@
 	transition-duration .5s
 	z-index 10
 	@media(max-width: 700px)
-		padding-top rem(30px) 
+		padding-top rem(30px)
+	@media(max-height: 800px)
+		padding-top rem(25px)
+		padding-bottom rem(80px)
 
 .wrapper--main
 	background none !important
 	.footer__item
 		cursor pointer
+
+.wrapper--object
+	overflow hidden
+	.footer__list
+		transform rotate(-90deg) translateX(25%)
 
 .wrapper--green
 	background url("../img/general/main-bg.jpg") center no-repeat

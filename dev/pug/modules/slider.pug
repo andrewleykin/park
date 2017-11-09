@@ -1,0 +1,21 @@
+.object
+	.container
+		.object__wrap
+			.object__pic
+				.object__content--pic
+					each object in content.slider.pic
+						img.object__photo(src="app/img/content/object/object__"+object["index"]+".jpg" alt= object["alt"])
+			.object__descr
+				.object__content
+					each object in content.slider.list
+						.object__item(data-color= object["color"])
+							.object__inner
+								span.object__name= object["name"] 
+								p.object__text= object["text"] 
+								a.object__link(href= object["link"]  target="_blank")
+								button.object__btn(type="button")= content.slider.btn.order
+			button.object__arrow(type="button")
+				img(src="app/img/general/arrow.png", alt="NEXT")
+			.object__dots
+				each val in [1,2,3,4,5]
+					span.object__dot
