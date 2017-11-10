@@ -59,8 +59,8 @@
 	}
 
 	preloadImages(
-		"/app/img/general/main-bg__2.jpg",
-		"/app/img/general/main-bg.jpg"
+		"app/img/general/main-bg__2.jpg",
+		"app/img/general/main-bg.jpg"
 	);
 })();
 
