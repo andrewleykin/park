@@ -52,16 +52,16 @@
 // подгрузка изображений
 
 (function(){
-	//создаем JQuery функцию, которая будет подгружать изображения в буфер
-	jQuery.preloadImages = function()
-		{
-			for(var i = 0; i < arguments.length; i++)
-		{
-			jQuery("<img>").attr("src", arguments[ i ]);
+	function preloadImages() {
+		for (var i = 0; i < arguments.length; i++) {
+			new Image().src = arguments[i];
 		}
-	};
-	//указываем путь к изображению, которое нужно подгрузить
-	$.preloadImages("./app/img/general/main-bg__2.jpg", "./app/img/general/main-bg.jpg");
+	}
+
+	preloadImages(
+		"/app/img/general/main-bg__2.jpg",
+		"/app/img/general/main-bg.jpg"
+	);
 })();
 
 // параллакс
