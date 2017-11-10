@@ -14,6 +14,14 @@
 	height 490px
 	@media(max-width: 1300px)
 		margin-left rem(45px)
+	@media(max-width: 1200px)
+		background rgba(#fff, 0.8)
+	@media(max-width: 960px)
+		height 450px
+	@media(max-width: 700px)
+		background transparent 
+		height auto
+		flex-direction column
 	@media(max-height: 800px)
 		height 450px
 
@@ -22,6 +30,22 @@
 	top -15px
 	left 80px
 	z-index 5
+	@media(max-width: 1200px)
+		position: relative;
+		width: 50%;
+		left 0
+	@media(max-width: 960px)
+		top 0
+		width 70%
+	@media(max-width: 700px)
+		width 100%
+		position absolute
+		top -100%
+	@media(max-width: 480px)
+		width: 120%;
+		position: absolute;
+		top: -90%;
+		left: -10%;
 
 .object__photo
 	border 15px solid #fff
@@ -30,8 +54,17 @@
 	opacity 0
 	trs()
 	transition-duration .4s
+	@media(max-width: 1200px)
+		margin 0 auto
+	@media(max-width: 960px)
+		height 450px
 	@media(max-height: 800px)
 		height 500px
+	@media(max-width: 700px)
+		height 350px
+		border-width 10px 
+	@media(max-width: 480px)
+		border-width 5px
 
 .object__photo--active
 	opacity 1
@@ -39,6 +72,15 @@
 .object__descr
 	width 100%
 	overflow hidden
+	position relative
+	@media(max-width: 1200px)
+		width 50%
+		z-index 100
+	@media(max-width: 700px)
+		width 90%
+		margin 0 auto
+	@media(max-width: 480px)
+		width 100%
 
 .object__content
 	width 100%
@@ -79,6 +121,11 @@
 		bottom 0
 		background rgba(#fff, 0.8)
 		z-index -1 
+	@media(max-width: 1200px)
+		width: 100%;
+		padding 20px 10px 
+	@media(max-width: 700px)
+		text-align center
 
 .object__name
 	font-size rem(20px)
@@ -86,12 +133,20 @@
 	font-weight 900 
 	display block
 	margin-bottom rem(75px)
+	@media(max-width: 480px)
+		height 30px
+		margin-bottom rem(50px) 
 
 .object__text
 	font-size 14px
 	line-height 30px
 	text-transform uppercase 
 	margin-bottom rem(55px)
+	@media(max-width: 700px)
+		height 90px
+		margin-bottom rem(40px) 
+	@media(max-width: 480px)
+		height 130px
 
 .object__link
 	size(26px, 40px)
