@@ -1,0 +1,20 @@
+.order
+	.remodal.order__block(data-remodal-id="order")
+		button.remodal-close.order__close(data-remodal-action="close")
+		.order__wrap
+			.order__left
+				h3.order__title= content.order.title
+				form.order__form
+					each object in content.order.form
+						- if (object["required"] == 'true') {
+							.order__block
+								input.order__input.order__input--required(class= object["class"] type= object["type"], name= object["name"], id= object["id"], required)
+								label.order__label(for= object["id"])= object["label"]
+						- } else {
+							.order__block
+								input.order__input(class= object["class"] type= object["type"], name= object["name"], id= object["id"])
+								label.order__label(for= object["id"])= object["label"]
+						- }
+			.order__right
+				p.order__text= content.order.text
+				button.order__btn(type="submit")= content.order.btn

@@ -1,0 +1,143 @@
+.order__block
+	width 100%
+	max-width 1100px
+	padding 0
+	margin-bottom 0
+	background rgba(#fff, 0.8) 
+
+.order__close
+	left unset
+	right 0
+	size(50px)
+	z-index 5
+	&:before
+		font-weight 900
+		color white
+		font-size 40px
+		left unset
+		right 0
+	@media(max-width: 480px)
+		&:before
+			color #95979c
+
+.order__wrap
+	position relative
+	display flex
+	justify-content flex-end
+	height 490px
+	@media(max-height: 800px)
+		height 450px
+	@media(max-width: 480px)
+		flex-direction column
+		height auto
+
+.order__left
+	position absolute
+	top -20px
+	background white 
+	left 82px
+	bottom -20px
+	padding-left rem(40px)
+	display flex
+	flex-direction column
+	justify-content space-between
+	padding-bottom rem(50px) 
+	padding-top rem(50px)
+	box-shadow 0px 0px 15px 1px rgba(#1a0205, .2)
+	@media(max-width: 960px)
+		position relative
+		top 0
+		left 0
+		bottom 0
+	@media(max-width: 480px)
+		padding 30px 10px 20px
+
+.order__title
+	font-size rem(20px)
+	text-transform uppercase
+	font-weight 900 
+	color textColor 
+	text-align left
+	line-height rem(30px)
+	width 80%
+	@media(max-width: 700px)
+		width 90%
+	@media(max-width: 480px)
+		width 100%
+		margin-bottom 20px
+
+.order__block
+	margin-top rem(65px)
+	position relative
+	&:first-child
+		margin-top 0
+
+.order__input
+	width 100%
+	padding 10px 15px
+	font-weight 900 
+	font-size 14px
+	&:focus
+		&+.order__label
+			opacity 0
+
+.order__label
+	font-size 14px
+	font-weight 900
+	text-transform uppercase
+	color textColor
+	position absolute
+	top 10px
+	left 15px
+	trs()
+
+.order__label--hide
+	opacity 0
+
+.order__right
+	width 55%
+	background #bcbec0
+	display flex
+	flex-direction column
+	justify-content center
+	trs()
+	@media(max-width: 480px)
+		width 100%
+
+.order__right--active
+	background greenColor 
+	.order__btn
+		cursor pointer
+
+.order__text
+	width 40%
+	margin 0 auto
+	text-align left
+	padding-top rem(150px)
+	font-size 14px
+	color white
+	line-height rem(30px)
+	text-transform uppercase
+	letter-spacing 2px
+	@media(max-width: 960px)
+		width 60%
+	@media(max-width: 700px)
+		width 90%
+	@media(max-width: 480px)
+		padding-top rem(100px) 
+
+.order__btn
+	color white
+	font-size 20px
+	font-weight 900
+	padding 10px 20px
+	width 100%
+	height 100%
+	cursor default
+	display block 
+	margin 0 auto
+	background none
+	letter-spacing 2px
+	trs()
+	@media(max-width: 480px)
+		padding 25px 0

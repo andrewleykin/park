@@ -22,8 +22,6 @@
 		background transparent 
 		height auto
 		flex-direction column
-	@media(max-height: 800px)
-		height 450px
 
 .object__pic
 	position absolute
@@ -42,10 +40,10 @@
 		position absolute
 		top -100%
 	@media(max-width: 480px)
-		width: 120%;
+		width: 100%;
 		position: absolute;
-		top: -90%;
-		left: -10%;
+		top: -80%;
+		left: 1%;
 
 .object__photo
 	border 15px solid #fff
@@ -58,12 +56,11 @@
 		margin 0 auto
 	@media(max-width: 960px)
 		height 450px
-	@media(max-height: 800px)
-		height 500px
 	@media(max-width: 700px)
 		height 350px
 		border-width 10px 
 	@media(max-width: 480px)
+		height 300px
 		border-width 5px
 
 .object__photo--active
@@ -151,7 +148,7 @@
 .object__link
 	size(26px, 40px)
 	display block
-	background url("../img/general/icon-map.png") center no-repeat
+	background url("../img/general/icon-map.svg") center no-repeat
 	background-size cover
 	margin 0 auto
 	margin-bottom rem(65px)
@@ -173,7 +170,7 @@
 .object__arrow
 	position absolute
 	background none
-	top 120%
+	top 115%
 	left 50%
 	transform translateX(-50%)
 	trs()

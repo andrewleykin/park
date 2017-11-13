@@ -1,6 +1,7 @@
 // Начальная функция
 
 (function(){
+	// переменные
 	var footerItem = $('.footer__item'),
 		about = $('.about'),
 		aboutItem = $('.about__item'),
@@ -10,27 +11,32 @@
 		aboutPartAnimate = 'about__part--animate',
 		wrapper = $('.wrapper');
 
-
+	// если главная должна быть зеленая, то 
 	if(wrapper.hasClass('wrapper--green')) {
-		footerItem.first().addClass(footerActive);
-	} else {
-		footerItem.last().addClass(footerActive);
+		footerItem.first().addClass(footerActive); // первому элементу списка добавить активный класс
+	} else { // иначе
+		footerItem.last().addClass(footerActive); // последнему элементу списка
 	}
 
-
+	// если на странице есть информация "О НАС"
 	if(about.length) {
+		// сразу показать перывый элемент
 		aboutItem.first().addClass(aboutItemActive);
+		// анимация для адреса
 		setTimeout(function(){
 			aboutPart.addClass(aboutPartAnimate);
 		},500);
 		
+		// при клике на элементы
 		footerItem.click(function() {
 
+			// переменные
 			var $this = $(this),
 				index = $this.index(),
 				reqFooter = footerItem.eq(index),
 				reqItem = aboutItem.eq(index);
 
+			// смотрим на какой элемент нажали и в зависимости от этого меняем класс у родителя
 			if($this.data('color') == 'green') {
 				$this.closest('.wrapper').removeClass('wrapper--blue').addClass('wrapper--green');
 				$this.closest('.wrapper').siblings('.wrap').removeClass('wrapper--blue').addClass('wrapper--green');
@@ -39,9 +45,10 @@
 				$this.closest('.wrapper').siblings('.wrap').removeClass('wrapper--green').addClass('wrapper--blue');
 			}
 
+				// если это уже активный элемент то ничего не делать
 				if($this.hasClass(footerActive)) {
 					return false;
-				} else {
+				} else { // иначе добавить ему активный класс, удалив у другого
 					reqFooter.addClass(footerActive).siblings().removeClass(footerActive);
 					reqItem.addClass(aboutItemActive).siblings().removeClass(aboutItemActive);
 				}
@@ -59,8 +66,8 @@
 	}
 
 	preloadImages(
-		"/app/img/general/main-bg__2.jpg",
-		"/app/img/general/main-bg.jpg"
+		"app/img/general/main-bg__2.jpg",
+		"app/img/general/main-bg.jpg"
 	);
 })();
 
