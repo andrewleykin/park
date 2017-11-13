@@ -67,7 +67,7 @@
 
 	preloadImages(
 		"app/img/general/main-bg__2.jpg",
-		"app/img/general/main-bg.jpg"
+ +		"app/img/general/main-bg.jpg"
 	);
 })();
 
@@ -111,8 +111,9 @@
 
 		index++;
 		if(index == item.length) {
-			index = item.length - 1;
+			index = 0;
 		}
+
 		changeSlide(index);
 	});
 
@@ -130,17 +131,18 @@
 			index = itemActive.index();
 		if(e.keyCode == 38) {
 			if(index == 0) {
-				index = 0
+				index = item.length - 1;
 			} else {
 				index--;
 			}
 		} else if (e.keyCode == 40){
 			if(index == item.length-1) {
-				index = item.length - 1;
+				index = 0;
 			} else {
 				index++;
 			}
 		}
+
 		changeSlide(index);
 	});
 
@@ -152,13 +154,13 @@
 
 		if(event.deltaY > 0) {
 			if(index == 0) {
-				index = 0
+				index = item.length - 1;
 			} else {
 				index--;
 			}
 		} else {
 			if(index == item.length-1) {
-				index = item.length - 1;
+				index = 0;
 			} else {
 				index++;
 			}
@@ -179,41 +181,41 @@
 			var itemActive = item.filter('.' + activeItem),
 				index = itemActive.index();
 			if(index == 0) {
-				index = 0
+				index = item.length - 1;
 			} else {
 				index--;
-				changeSlide(index);
 			}
+			changeSlide(index);
 		},
 		swipeDown:function(event) {
 			var itemActive = item.filter('.' + activeItem),
 				index = itemActive.index();
 			if(index == item.length-1) {
-				index = item.length - 1;
+				index = 0;
 			} else {
 				index++;
-				changeSlide(index);
 			}
+			changeSlide(index);
 		},
 		swipeRight:function(event) {
 			var itemActive = item.filter('.' + activeItem),
 				index = itemActive.index();
 			if(index == 0) {
-				index = 0
+				index = item.length - 1;
 			} else {
 				index--;
-				changeSlide(index);
 			}
+			changeSlide(index);
 		},
 		swipeLeft:function(event) {
 			var itemActive = item.filter('.' + activeItem),
 				index = itemActive.index();
 			if(index == item.length-1) {
-				index = item.length - 1;
+				index = 0;
 			} else {
 				index++;
-				changeSlide(index);
 			}
+			changeSlide(index);
 		}
 	});
 
@@ -226,11 +228,11 @@
 			percPhoto = perc/photo.length,
 			color = reqItem.data('color')
 
-		if(index == item.length-1) {
-			arrow.addClass(disabledArrow);
-		} else {
-			arrow.removeClass(disabledArrow)
-		}
+		// if(index == item.length-1) {
+		// 	arrow.addClass(disabledArrow);
+		// } else {
+		// 	arrow.removeClass(disabledArrow)
+		// }
 
 		if(color == 'green') {
 			reqItem.closest('.wrapper').removeClass('wrapper--blue').addClass('wrapper--green');
@@ -321,7 +323,6 @@
 		});
 
 })();
-<<<<<<< HEAD
 
 // Партнёры
 
@@ -372,5 +373,3 @@
 		}
 	});
 })();
-=======
->>>>>>> ba4361d125f7c48cd85d0eb93c6b5e2de30b7416
