@@ -1,0 +1,5 @@
+.partners
+	ul.partners__list
+		each object in content.partners
+			li.partners__item
+				a.partners__link(href= object["link"])= object["name"]
