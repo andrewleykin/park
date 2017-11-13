@@ -321,6 +321,56 @@
 		});
 
 })();
+
+// Партнёры
+
+(function(){
+	// переменные
+	var link = $('.menu__link'),
+		partners = $('.partners'),
+		activePartners = 'partners--active',
+		flag = true;
+
+	// при нажатии на ссылку
+	link.click(function(e) {
+		var href = $(this).attr('href'); // href ссылки
+
+		// если ссылка это партнёры
+		if(href == "#partners") {
+			e.preventDefault(); // убираем стандарт действия
+			// проверяем есть ли блок партнёров
+			if(!(partners.hasClass(activePartners)) && flag == true) {
+				partners.addClass(activePartners);
+				flag = false;
+			} else {
+				partners.removeClass(activePartners);
+				flag = true;
+			}
+		}
+	});
+
+	// при нажатии на клавишу Esc
+	$(document).keyup(function(e) {
+		if(partners.hasClass(activePartners) && e.which == 27) {
+			partners.removeClass(activePartners);
+			flag = false;
+			setTimeout(function(){
+				flag = true;
+			},100);
+		}
+	});
+
+	// при нажатии на область вне элемента
+	$(document).mouseup(function(e) {
+		if(partners.hasClass(activePartners) && !partners.has(e.target).length) {
+			partners.removeClass(activePartners);
+			flag = false;
+			setTimeout(function(){
+				flag = true;
+			},100);
+		}
+	});
+})();
 $(document).ready(function () {
     svg4everybody({});
 });

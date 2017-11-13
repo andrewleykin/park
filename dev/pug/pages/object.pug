@@ -4,8 +4,15 @@ block variables
 	- var title = 'Объекты'
 
 block content
+	// Обёртка для контента
 	.wrapper.wrapper--object.wrapper--blue
+		// Шапка
 		include ../modules/header
+		// Слайдер
 		include ../modules/slider
-		include ../modules/footer
+		// Партнёры
+		include ../modules/partners
+		// Форма заказа
 		include ../modules/order
+		// Подвал
+		include ../modules/footer

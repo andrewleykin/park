@@ -128,5 +128,23 @@
         "class": "order__input--message"
       }
     ]
-  }
+  },
+  "partners": [
+    {
+      "name": "ЛСР. Строительство – М",
+      "link": "#"
+    },
+    {
+      "name": "Престиж Декор",
+      "link": "#"
+    },
+    {
+      "name": "Urban Group",
+      "link": "#"
+    },
+    {
+      "name": "ООО «Капитель»",
+      "link": "#"
+    }
+  ]
 }

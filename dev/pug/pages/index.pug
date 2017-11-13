@@ -4,8 +4,15 @@ block variables
 	- var title = 'Главная'
 
 block content
+	// Параллакс
 	include ../modules/wrapper
+	// Обёртка для контента
 	.wrapper.wrapper--main.wrapper--green
+		// Шапка
 		include ../modules/header
+		// Секция about
 		include ../modules/about
+		// Партнёры
+		include ../modules/partners
+		// Подвал
 		include ../modules/footer

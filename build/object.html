@@ -10,7 +10,9 @@
     <link rel="stylesheet" type="text/css" href="app/css/main.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
     <body>
+      <!-- Обёртка для контента-->
       <div class="wrapper wrapper--object wrapper--blue">
+        <!-- Шапка-->
         <header class="header">
           <div class="container">
             <div class="header__row"><a class="header__link" href="index.html">
@@ -19,13 +21,14 @@
                 <nav class="menu">
                   <ul class="menu__list">
                     <li class="menu__item"><a class="menu__link" href="object.html">Объекты</a></li>
-                    <li class="menu__item"><a class="menu__link" href="#">Партнёры</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#partners">Партнёры</a></li>
                   </ul>
                 </nav>
               </div>
             </div>
           </div>
         </header>
+        <!-- Слайдер-->
         <div class="object">
           <div class="container">
             <div class="object__wrap">
@@ -73,14 +76,16 @@
             </div>
           </div>
         </div>
-        <footer class="footer">
-          <div class="container">
-            <ul class="footer__list">
-              <li class="footer__item" data-color="green">Благоустройство</li>
-              <li class="footer__item" data-color="blue">Вентилируемые фасады</li>
-            </ul>
-          </div>
-        </footer>
+        <!-- Партнёры-->
+        <div class="partners">
+          <ul class="partners__list">
+            <li class="partners__item"><a class="partners__link" href="#">ЛСР. Строительство – М</a></li>
+            <li class="partners__item"><a class="partners__link" href="#">Престиж Декор</a></li>
+            <li class="partners__item"><a class="partners__link" href="#">Urban Group</a></li>
+            <li class="partners__item"><a class="partners__link" href="#">ООО «Капитель»</a></li>
+          </ul>
+        </div>
+        <!-- Форма заказа-->
         <div class="order">
           <div class="remodal order__block" data-remodal-id="order">
             <button class="remodal-close order__close" data-remodal-action="close"></button>
@@ -113,6 +118,15 @@
             </div>
           </div>
         </div>
+        <!-- Подвал-->
+        <footer class="footer">
+          <div class="container">
+            <ul class="footer__list">
+              <li class="footer__item" data-color="green">Благоустройство</li>
+              <li class="footer__item" data-color="blue">Вентилируемые фасады</li>
+            </ul>
+          </div>
+        </footer>
       </div>
       <script src="app/js/libs.min.js"></script>
       <script src="app/js/app.js"></script>
